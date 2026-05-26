@@ -84,6 +84,28 @@ body {
   transform: translateY(0) scale(1);
 }
 
+.inside-mobile-scroll {
+  scroll-padding-inline: 1.25rem;
+  scrollbar-width: none;
+}
+
+.inside-mobile-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.inside-mobile-panel {
+  transform: translateZ(0);
+}
+
+.inside-mobile-phone {
+  transition: transform 220ms ease;
+}
+
+.inside-mobile-panel:focus-within .inside-mobile-phone,
+.inside-mobile-panel:hover .inside-mobile-phone {
+  transform: translateY(-4px);
+}
+
 .inside-trigger:focus,
 .inside-trigger:hover,
 .inside-trigger.active,
