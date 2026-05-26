@@ -1,0 +1,226 @@
+---
+import "../styles/global.css";
+
+const principles = [
+    {
+        label: "Scan barcodes",
+        text: "Add packaged foods quickly with barcode scanning, then adjust the portion if you need to.",
+    },
+    {
+        label: "Free to use",
+        text: "Buff is completely free, with simple calorie, macro, meal, weight, step, and workout tracking.",
+    },
+    {
+        label: "Private by default",
+        text: "Your nutrition data is stored locally on your phone, so your meal log stays with you.",
+    },
+];
+
+const details = [
+    {
+        title: "Add food with search, scan, or custom entry",
+        body: "Search for a food, scan a barcode, or add your own item from the same simple logging screen.",
+        screenshot: "/screenshots/meals.png",
+        alt: "Buff Add food screen with search, Scan, Custom, and previous food entries.",
+        key: "meals",
+    },
+    {
+        title: "Set daily calorie and macro goals",
+        body: "Choose a calorie target and balance carbs, protein, and fat so your macros add up clearly.",
+        screenshot: "/screenshots/targets.png",
+        alt: "Buff Goals screen showing calorie target, macro split, and Save goals button.",
+        key: "targets",
+    },
+    {
+        title: "See how your macros are split",
+        body: "Open protein, carbs, or fat to see the current split, daily goal, and foods contributing to it.",
+        screenshot: "/screenshots/macros.png",
+        alt: "Buff Protein screen showing current split, goal split, and foods with macro amounts.",
+        key: "macros",
+    },
+    {
+        title: "Track body metrics and trends",
+        body: "Follow weight, body fat, BMI, and simple trend lines alongside your food log.",
+        screenshot: "/screenshots/progress.png",
+        alt: "Buff Progress screen showing weight, body fat, BMI, and trend charts.",
+        key: "progress",
+    },
+];
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
+    <meta
+        name="description"
+        content="Buff is a free nutrition tracker for Android with barcode scanning, calorie and macro tracking, and local-only data stored on your phone."
+    />
+    <title>Buff - Free nutrition tracker with barcode scanning</title>
+    <script is:inline>
+        const applyTheme = () => {
+            document.documentElement.classList.toggle("dark", window.matchMedia("(prefers-color-scheme: dark)").matches);
+        };
+
+        applyTheme();
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
+    </script>
+</head>
+<body class="bg-primary-light text-stone-950 antialiased dark:text-stone-100">
+<main class="overflow-hidden">
+    <section class="hero-shell relative isolate min-h-[100svh] overflow-hidden bg-primary-light">
+        <header class="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
+            <a href="/" class="group flex items-center gap-3" aria-label="Buff home">
+                <img src="/icon-dark.png" alt="" class="h-11 w-11 rounded-[14px]"/>
+                <span class="text-lg font-heading text-primary font-black">Buff</span>
+            </a>
+            <a
+                href="https://play.google.com/store/apps/details?id=com.mason.buff"
+                class="hidden min-h-11 items-center justify-center rounded-full bg-primary px-5 text-sm font-black text-white transition hover:bg-stone-950 dark:text-stone-950 dark:hover:bg-white sm:inline-flex"
+            >
+                Download now
+            </a>
+        </header>
+
+        <div class="relative z-10 mx-auto grid max-w-7xl gap-10 px-5 pb-0 pt-0 sm:px-8 lg:min-h-[calc(100svh-84px)] lg:grid-cols-[0.98fr_0.82fr] lg:items-center lg:pb-20 lg:pt-4">
+            <div class="min-w-0 max-w-3xl animate-rise">
+                <h1 class="mt-6 max-w-2xl text-balance text-primary text-4xl font-black sm:text-6xl leading-[1.15]">
+                    Log meals. Track progress. Stay consistent.
+                </h1>
+                <p class="mt-6 max-w-[330px] text-pretty text-lg text-stone-700 dark:text-stone-300 sm:max-w-xl sm:text-xl">
+                    Buff is a simple app for logging meals, tracking calories and macros, and keeping your data on your phone.
+                </p>
+                <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.mason.buff"
+                        class="inline-flex min-h-12 w-full max-w-[350px] items-center justify-center rounded-full bg-primary px-7 text-sm font-black text-white shadow-[0_20px_70px_rgba(37,61,44,0.2)] transition hover:-translate-y-0.5 hover:bg-stone-950 dark:text-stone-950 dark:shadow-[0_20px_70px_rgba(220,232,212,0.12)] dark:hover:bg-white sm:w-auto"
+                    >
+                        Download Buff for free
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-phone h-80 sm:h-auto overflow-hidden rounded-t-2xl sm:rounded-2xl shadow-[0_40px_120px_rgba(28,25,23,0.2)] dark:shadow-[0_40px_120px_rgba(0,0,0,0.45)] mx-auto w-full max-w-[280px] sm:max-w-[350px] lg:ml-auto lg:max-w-[350px]">
+                <img
+                    src="/screenshots/today.png"
+                    alt="Buff Today screen showing calories, macros, meals, and bottom navigation."
+                    class="block w-full"
+                    loading="eager"
+                />
+            </div>
+        </div>
+    </section>
+
+    <section id="daily" class="bg-secondary py-12 text-stone-950 dark:text-stone-100 sm:py-28">
+        <div class="mx-auto flex flex-col max-w-7xl gap-2 sm:gap-14 px-5 sm:px-8 lg:flex-row-reverse lg:items-start">
+            <div class="reveal w-full">
+                <h2 class="mt-4 text-balance text-4xl leading-[1.2] sm:text-5xl text-primary">
+                    Basic tracking.<br>No subscription.
+                </h2>
+            </div>
+            <div class="divide-y sm:w-7/12 shrink-0 divide-stone-950/12 dark:divide-white/12">
+                {principles.map((principle) => (
+                    <article class="reveal grid gap-3 py-7 sm:grid-cols-[0.32fr_1fr] sm:gap-8">
+                        <p class="text-xl font-extrabold text-primary">{principle.label}</p>
+                        <p class="max-w-2xl text-lg text-stone-700 dark:text-stone-300">{principle.text}</p>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section id="inside" class="bg-secondary pb-20 text-stone-950 dark:text-stone-100 sm:pb-28">
+        <div class="inside-showcase mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.78fr_1fr] lg:items-center">
+            <div class="reveal order-2 lg:order-1">
+                <div class="inside-phone relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-2xl bg-secondary shadow-[0_36px_110px_rgba(37,61,44,0.16)] dark:shadow-[0_36px_110px_rgba(0,0,0,0.5)]">
+                    {details.map((detail, index) => (
+                        <img
+                            src={detail.screenshot}
+                            alt={detail.alt}
+                            class:list={[
+                                "inside-shot absolute inset-0 rounded-[1.45rem] object-cover",
+                                index === 0 && "inside-shot-default",
+                                `inside-shot-${detail.key}`,
+                            ]}
+                            loading={index === 0 ? "eager" : "lazy"}
+                        />
+                    ))}
+                </div>
+            </div>
+            <div class="reveal order-1 max-w-2xl lg:order-2">
+                <h2 class="mt-4 text-balance text-4xl  sm:text-5xl text-primary font-heading">
+                    A simple nutrition tracker for everyday use.
+                </h2>
+                <p class="mt-4 text-lg text-stone-700 dark:text-stone-300">
+                    Log food with barcode scanning, check calories and macros, and track progress without creating an online account.
+                </p>
+                <div class="mt-10 -mx-5">
+                    {details.map((detail, index) => (
+                        <button
+                            type="button"
+                            data-shot={detail.key}
+                            class:list={{ active: index === 0 }}
+                            class="inside-trigger cursor-pointer sm:rounded-2xl bg-transparent grid w-full gap-2 p-5 text-left transition-all focus-visible:outline-none sm:grid-cols-[0.42fr_1fr] sm:gap-8"
+                        >
+                            <span class="text-base font-extrabold text-primary">{detail.title}</span>
+                            <span class="text-sm text-stone-600 dark:text-stone-300">{detail.body}</span>
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="bg-primary-light py-16 text-primary sm:py-20">
+        <div class="mx-auto flex max-w-7xl flex-col justify-between gap-12 sm:gap-8 px-5 sm:px-8 lg:flex-row lg:items-end">
+            <div class="max-w-3xl">
+                <h2 class="text-balance text-primary/20 text-4xl dark:text-primary/25 sm:text-6xl">
+                    Start tracking today.
+                </h2>
+            </div>
+            <a
+                href="https://play.google.com/store/apps/details?id=com.mason.buff"
+                class="flex items-center transition hover:scale-105"
+            >
+                <img src="/google-play.svg" class="h-16" />
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-primary px-5 py-8 text-sm text-white/50 dark:text-stone-950/55 sm:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; {new Date().getFullYear()} Buff. SpacemanCodes LTD</p>
+        <nav class="flex gap-5">
+            <a href="https://spacemancodes.com/" class="transition hover:text-white dark:hover:text-stone-950">SpacemanCodes</a>
+            <a href="/privacy" class="transition hover:text-white dark:hover:text-stone-950">Privacy</a>
+            <a href="/terms" class="transition hover:text-white dark:hover:text-stone-950">Terms</a>
+        </nav>
+    </div>
+</footer>
+<script>
+    const showcase = document.querySelector(".inside-showcase");
+    const triggers = document.querySelectorAll("[data-shot]");
+
+    const removeActiveTriggerClass = () => {
+        triggers.forEach((trigger) => {
+            trigger.classList.remove('active')
+        });
+    }
+
+    triggers.forEach((trigger) => {
+        const setActiveShot = () => {
+            removeActiveTriggerClass()
+            showcase?.setAttribute("data-active-shot", trigger.getAttribute("data-shot") ?? "meals");
+            trigger.classList.add('active')
+        };
+
+        trigger.addEventListener("mouseenter", setActiveShot);
+        trigger.addEventListener("focus", setActiveShot);
+        trigger.addEventListener("click", setActiveShot);
+    });
+</script>
+</body>
+</html>

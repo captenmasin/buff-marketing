@@ -1,0 +1,55 @@
+---
+import LegalLayout from "../layouts/LegalLayout.astro";
+
+const sections = [
+  {
+    title: "1. Agreement",
+    body: "These Terms of Service govern your use of Buff, a free Android nutrition tracking app provided by SpacemanCodes LTD. By using Buff, you agree to these terms.",
+  },
+  {
+    title: "2. App purpose",
+    body: "Buff is provided to help you log meals, scan food barcodes, track calories and macronutrients, and monitor related progress information. It is a tracking tool only.",
+  },
+  {
+    title: "3. No medical advice",
+    body: "Buff does not provide medical, nutritionist, dietitian, fitness, or clinical advice. You are responsible for deciding whether the information in the app is suitable for you. Speak with a qualified professional before making health decisions that require professional guidance.",
+  },
+  {
+    title: "4. Your responsibility",
+    body: "You are responsible for the information you enter, the goals you set, and how you use the app. You must use Buff lawfully and must not misuse, interfere with, or attempt to disrupt the app or related services.",
+  },
+  {
+    title: "5. Free app and changes",
+    body: "Buff is currently provided free of charge. We may update, change, suspend, or discontinue parts of the app at any time, including features, content, design, or availability.",
+  },
+  {
+    title: "6. Local data",
+    body: "Buff is designed to store your personal tracking data locally on your phone. You are responsible for managing your device, backups, storage, and any data you delete from the app or device.",
+  },
+  {
+    title: "7. Third-party services",
+    body: "Buff may rely on third-party platforms or data sources, including Google Play, Android, and food lookup sources. We are not responsible for third-party services, data availability, or external terms that may apply to them.",
+  },
+  {
+    title: "8. Disclaimer",
+    body: "Buff is provided on an as-is and as-available basis to the fullest extent permitted by law. We do not guarantee that the app will be uninterrupted, error-free, or that nutrition data will always be complete or accurate.",
+  },
+  {
+    title: "9. Limitation of liability",
+    body: "To the fullest extent permitted by law, SpacemanCodes LTD will not be liable for indirect, incidental, special, consequential, or punitive losses arising from your use of Buff.",
+  },
+  {
+    title: "10. Changes to these terms",
+    body: "We may update these terms from time to time. The updated version will be identified by a new last updated date.",
+  },
+];
+---
+
+<LegalLayout
+  title="Terms of Service - Buff"
+  description="Terms of Service for Buff, a free Android nutrition tracking app."
+  heading="Terms of Service"
+  summary="Last updated May 26, 2026. These terms set out the conditions that apply when you use Buff."
+  contactIntro="For questions about these terms, contact the developer through the Buff "
+  sections={sections}
+/>

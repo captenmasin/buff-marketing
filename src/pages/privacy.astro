@@ -1,0 +1,47 @@
+---
+import LegalLayout from "../layouts/LegalLayout.astro";
+
+const sections = [
+  {
+    title: "1. Scope",
+    body: "This Privacy Policy explains how SpacemanCodes LTD handles information in connection with Buff, a free Android nutrition tracking app.",
+  },
+  {
+    title: "2. Information you enter",
+    body: "Buff lets you record meals, calories, macronutrients, body metrics, goals, workouts, steps, and related nutrition information. This information is stored locally on your device so the app can show your log, goals, and progress.",
+  },
+  {
+    title: "3. Barcode scanning and food lookup",
+    body: "When you use barcode scanning or food search, Buff may process the barcode or search term needed to find matching food information. The resulting food details can be saved locally on your device when you choose to add them to your log.",
+  },
+  {
+    title: "4. Local storage",
+    body: "Buff is designed to keep your nutrition and progress data on your phone. SpacemanCodes LTD does not operate a Buff account system for uploading your personal meal log to a hosted dashboard.",
+  },
+  {
+    title: "5. Third-party services",
+    body: "Your use of Buff through Google Play and Android may be subject to Google privacy practices. If you use food lookup data supplied by third-party sources, those sources may receive the lookup request required to return a result.",
+  },
+  {
+    title: "6. No sale of personal information",
+    body: "SpacemanCodes LTD does not sell your Buff nutrition log, body metrics, or progress information.",
+  },
+  {
+    title: "7. Your controls",
+    body: "Because Buff stores app data locally, you can remove locally stored Buff data by using device-level app storage controls or uninstalling the app. Device backups, if enabled by you, may be handled by your device or platform provider.",
+  },
+  {
+    title: "8. Changes to this policy",
+    body: "We may update this Privacy Policy from time to time. The updated version will be identified by a new last updated date.",
+  },
+];
+---
+
+<LegalLayout
+  title="Privacy Policy - Buff"
+  description="Privacy Policy for Buff, a free Android nutrition tracker with local on-device storage."
+  heading="Privacy Policy"
+  summary="Last updated May 26, 2026. This policy explains what information Buff uses, where it is stored, and how to contact us."
+  contactIntro="For privacy questions or data requests, contact the developer through the Buff "
+  sections={sections}
+/>
