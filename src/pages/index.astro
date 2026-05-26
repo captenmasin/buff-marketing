@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const googlePlayLink = 'https://play.google.com/store/apps/details?id=com.mason.buff'
 
@@ -50,26 +50,11 @@ const details = [
 ];
 ---
 
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <link rel="icon" href="/favicon.ico"/>
-    <meta name="viewport" content="width=device-width"/>
-    <meta
-        name="description"
-        content="Buff is a free nutrition tracker for Android with barcode scanning, calorie and macro tracking, and local-only data stored on your phone."
-    />
-    <title>Buff - Free nutrition tracker with barcode scanning</title>
-    <script is:inline>
-        const applyTheme = () => {
-            document.documentElement.classList.toggle("dark", window.matchMedia("(prefers-color-scheme: dark)").matches);
-        };
-
-        applyTheme();
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
-    </script>
-</head>
-<body class="bg-primary-light text-stone-950 antialiased dark:text-stone-100">
+<BaseLayout
+    title="Buff - Free nutrition tracker with barcode scanning"
+    description="Buff is a free nutrition tracker for Android with barcode scanning, calorie and macro tracking, and local-only data stored on your phone."
+    bodyClass="bg-primary-light text-stone-950 antialiased dark:text-stone-100"
+>
 <main class="overflow-hidden">
     <section class="hero-shell relative isolate min-h-[100svh] overflow-hidden bg-primary-light">
         <header class="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
@@ -243,5 +228,4 @@ const details = [
         trigger.addEventListener("click", setActiveShot);
     });
 </script>
-</body>
-</html>
+</BaseLayout>

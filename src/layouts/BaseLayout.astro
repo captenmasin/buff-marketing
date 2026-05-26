@@ -1,0 +1,44 @@
+---
+import "../styles/global.css";
+
+type Props = {
+    title: string;
+    description: string;
+    bodyClass?: string;
+    robots?: string;
+};
+
+const {
+    title,
+    description,
+    bodyClass = "bg-secondary text-stone-950 antialiased dark:text-stone-100",
+    robots,
+} = Astro.props;
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width"/>
+    {robots &&
+            <meta name="robots" content={robots}/>}
+    <meta name="description" content={description}/>
+    <title>{title}</title>
+    <script is:inline>
+        const applyTheme = () => {
+            document.documentElement.classList.toggle("dark", window.matchMedia("(prefers-color-scheme: dark)").matches);
+        };
+
+        applyTheme();
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
+    </script>
+    <script defer src="https://api.pirsch.io/pa.js"
+            id="pianjs"
+            data-code="bBpEAMZ9cGeCEytTH62FNyd8tk2JzPcW"></script>
+    <slot name="head"/>
+</head>
+<body class={bodyClass}>
+<slot/>
+</body>
+</html>

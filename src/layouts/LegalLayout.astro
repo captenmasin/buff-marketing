@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "./BaseLayout.astro";
 
 type Props = {
   title: string;
@@ -26,23 +26,7 @@ const isPrivacy = heading === "Privacy Policy";
 const isTerms = heading === "Terms of Service";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
-    <script is:inline>
-      const applyTheme = () => {
-        document.documentElement.classList.toggle("dark", window.matchMedia("(prefers-color-scheme: dark)").matches);
-      };
-
-      applyTheme();
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
-    </script>
-  </head>
-  <body class="bg-secondary text-stone-950 antialiased dark:text-stone-100">
+<BaseLayout title={title} description={description}>
     <main class="min-h-screen">
       <header class="border-b border-stone-950/10 px-5 py-5 dark:border-white/10 sm:px-8">
         <div class="mx-auto flex max-w-4xl items-center justify-between">
@@ -100,5 +84,4 @@ const isTerms = heading === "Terms of Service";
         </section>
       </article>
     </main>
-  </body>
-</html>
+</BaseLayout>
