@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="The page you were looking for could not be found on the Buff website."
+    />
+    <title>Page not found - Buff</title>
+    <script is:inline>
+      const applyTheme = () => {
+        document.documentElement.classList.toggle("dark", window.matchMedia("(prefers-color-scheme: dark)").matches);
+      };
+
+      applyTheme();
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
+    </script>
+  </head>
+  <body class="bg-secondary text-stone-950 antialiased dark:text-stone-100">
+    <main class="flex min-h-screen flex-col">
+      <header class="px-5 py-5 sm:px-8">
+        <div class="mx-auto max-w-4xl">
+          <a href="/" class="flex items-center gap-3" aria-label="Buff home">
+            <img src="/icon-dark.png" alt="" class="h-10 w-10 rounded-[13px]" />
+            <span class="text-lg font-black text-primary">Buff</span>
+          </a>
+        </div>
+      </header>
+
+      <section class="flex flex-1 flex-col items-center justify-center px-5 pb-28 text-center sm:px-8">
+        <h1 class="text-5xl leading-none text-primary sm:text-6xl">404</h1>
+        <p class="mt-5 max-w-lg text-lg leading-8 text-stone-700 dark:text-stone-300">
+          Page not found.
+        </p>
+        <a
+          href="/"
+          class="mt-8 inline-flex text-sm font-black text-primary underline decoration-primary/30 underline-offset-4 transition hover:decoration-primary"
+        >
+          Back to home
+        </a>
+      </section>
+    </main>
+  </body>
+</html>
