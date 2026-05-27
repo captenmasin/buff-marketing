@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
+const googlePlayLink = 'https://play.google.com/store/apps/details?id=com.spacemancodes.buff'
+
 type Props = {
   title: string;
   description: string;
@@ -79,7 +81,7 @@ const isTerms = heading === "Terms of Service";
           <h2 class="text-2xl">Contact</h2>
           <p class="mt-3 max-w-3xl text-lg leading-8 text-stone-700 dark:text-stone-300">
             {contactIntro}
-            <a class="font-bold text-stone-950 underline decoration-stone-950/30 underline-offset-4 dark:text-white dark:decoration-white/30" href="https://play.google.com/store/apps/details?id=com.mason.buff">Google Play listing</a>.
+            <a class="font-bold text-stone-950 underline decoration-stone-950/30 underline-offset-4 dark:text-white dark:decoration-white/30" href={googlePlayLink}>Google Play listing</a>.
           </p>
         </section>
       </article>
