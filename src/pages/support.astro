@@ -1,0 +1,27 @@
+---
+import LegalLayout from "../layouts/LegalLayout.astro";
+
+const sections = [
+  {
+    title: "App support",
+    body: "Email support@spacemancodes.com with a description of the issue, your device platform, and the Buff app version. Do not send passwords, payment-card details, store receipts, or health information you do not want included in the support request.",
+  },
+  {
+    title: "Buff+ purchases",
+    body: "Use Restore Purchases in Buff Settings if a completed App Store or Google Play purchase is not reflected in Buff. Use Manage Subscription to view, change, or cancel recurring billing through Apple or Google. Deleting Buff or your Buff account does not cancel a store subscription.",
+  },
+  {
+    title: "Account and data",
+    body: "Buff Settings lets you export or delete your account, remove synced records, disconnect health services, and revoke connected assistants. Email support if you cannot access those controls.",
+  },
+];
+---
+
+<LegalLayout
+  title="Support - Buff"
+  description="Get help with Buff accounts, tracking, AI meal analysis, and Buff+ subscriptions on iOS and Android."
+  heading="Support"
+  summary="Get help with Buff on iOS and Android."
+  contactIntro="Contact Buff support at "
+  sections={sections}
+/>

@@ -4,38 +4,46 @@ import LegalLayout from "../layouts/LegalLayout.astro";
 const sections = [
   {
     title: "1. Scope",
-    body: "This Privacy Policy explains how SpacemanCodes LTD handles information in connection with Buff, a free Android nutrition tracking app.",
+    body: "This Privacy Policy explains how SpacemanCodes LTD handles information when you use the Buff nutrition tracking app on iOS or Android, create a Buff account, use Buff's online services, or visit the Buff website.",
   },
   {
-    title: "2. Information you enter",
-    body: "Buff lets you record meals, calories, macronutrients, body metrics, goals, workouts, steps, and related nutrition information. When you connect Android Health Connect, Buff may also read burned calories from Health Connect to log them automatically. This information is stored locally on your device so the app can show your log, goals, and progress.",
+    title: "2. Information Buff handles",
+    body: "Buff handles the information you choose to provide, including your name, email address, account credentials, meals, calories, macronutrients, recipes, goals, workouts, body measurements, progress photos, app preferences, meal photos and notes submitted for AI analysis, and support communications. Buff also processes device, app, security, and diagnostic information needed to authenticate requests, prevent abuse, and operate the service.",
   },
   {
-    title: "3. Android Health Connect",
-    body: "If you choose to connect Buff with Android Health Connect, Buff may read active calories burned and related energy expenditure data from Health Connect to automatically log burned calories in your activity log. Buff uses this data only to display and record your burned calories on your device. You control this connection through Android and Health Connect permissions, and you can revoke Buff's access at any time in your device settings.",
+    title: "3. Local storage and account sync",
+    body: "Buff keeps your tracking data on your device. If you create or sign in to a Buff account, the records you choose to sync are also stored on Buff's servers so they can be restored, used across your devices, and made available to connected assistants you authorize. Account information, AI meal-analysis drafts and photos, and progress photos are stored on Buff's servers when you use those features.",
   },
   {
-    title: "4. Barcode scanning and food lookup",
-    body: "When you use barcode scanning or food search, Buff may process the barcode or search term needed to find matching food information. The resulting food details can be saved locally on your device when you choose to add them to your log.",
+    title: "4. Apple Health and Health Connect",
+    body: "If you connect Apple Health or Android Health Connect, Buff may read the workout and energy information you authorize so it can display and log activity in the app. Health permissions are controlled by your device settings and can be revoked at any time. Buff does not use health data for advertising or sell it.",
   },
   {
-    title: "5. Local storage",
-    body: "Buff is designed to keep your nutrition and progress data on your phone. SpacemanCodes LTD does not operate a Buff account system for uploading your personal meal log to a hosted dashboard.",
+    title: "5. AI meal analysis",
+    body: "When you request AI meal analysis, Buff sends the meal photos, notes, and follow-up corrections you provide to Buff's server and an AI service provider to generate a nutrition estimate. The estimate may be inaccurate and should be reviewed before you save it. Analysis drafts expire unless you confirm them; confirmed meal photos remain available with your saved meal until you delete the meal or your account.",
   },
   {
-    title: "6. Third-party services",
-    body: "Your use of Buff through Google Play and Android may be subject to Google privacy practices. If you enable Health Connect, your use of that service is also subject to Google's Health Connect privacy practices. If you use food lookup data supplied by third-party sources, those sources may receive the lookup request required to return a result.",
+    title: "6. Food lookup and connected assistants",
+    body: "When you scan a barcode or search for food, Buff sends the barcode or search terms needed to retrieve matching product information from food-data providers. If you connect a compatible AI assistant, it can access or change only the Buff data and actions you authorize, and you can revoke that connection in Buff settings.",
   },
   {
-    title: "7. No sale of personal information",
-    body: "SpacemanCodes LTD does not sell your Buff nutrition log, body metrics, or progress information.",
+    title: "7. Subscriptions and RevenueCat",
+    body: "Buff uses RevenueCat to manage Buff+ subscriptions purchased through Apple App Store or Google Play. Buff sends RevenueCat a server-generated pseudonymous customer identifier and receives purchase, product, entitlement, store, expiration, refund, and subscription-management metadata. RevenueCat does not receive your Buff password, meal log, meal photos, or health records from Buff. Apple or Google processes your payment information; Buff does not receive or store your full card details or store receipt tokens.",
   },
   {
-    title: "8. Your controls",
-    body: "Because Buff stores app data locally, you can remove locally stored Buff data by using device-level app storage controls or uninstalling the app. You can also disconnect Health Connect or revoke Buff's Health Connect permissions in your device settings. Device backups, if enabled by you, may be handled by your device or platform provider.",
+    title: "8. Service providers and website analytics",
+    body: "Buff relies on service providers for hosting, authentication, email delivery, AI processing, food lookup, subscription management, and security. The Buff website uses privacy-focused aggregate analytics to understand page visits. These providers process information only as needed to supply their services and may operate in countries outside the United Kingdom, subject to their safeguards and applicable law.",
   },
   {
-    title: "9. Changes to this policy",
+    title: "9. Retention and your controls",
+    body: "You can edit or delete local records in Buff, disconnect health services or connected assistants, export your account data, and delete your Buff account from Settings. Account deletion removes the account and synced Buff data, but it does not cancel an App Store or Google Play subscription; cancel that separately through Manage Subscription before deleting the account. Store and payment providers may retain purchase records as required by law. Device backups may retain local data according to your platform settings.",
+  },
+  {
+    title: "10. No sale of personal information",
+    body: "SpacemanCodes LTD does not sell your personal information, nutrition log, body metrics, photos, health information, or purchase history.",
+  },
+  {
+    title: "11. Changes to this policy",
     body: "We may update this Privacy Policy from time to time. The updated version will be identified by a new last updated date.",
   },
 ];
@@ -43,9 +51,9 @@ const sections = [
 
 <LegalLayout
   title="Privacy Policy - Buff"
-  description="Privacy Policy for Buff, a free Android nutrition tracker with local on-device storage."
+  description="Privacy Policy for Buff on iOS and Android, including accounts, AI meal analysis, health connections, and subscriptions."
   heading="Privacy Policy"
-  summary="Last updated June 3, 2026. This policy explains what information Buff uses, where it is stored, and how to contact us."
-  contactIntro="For privacy questions or data requests, contact the developer through the Buff "
+  summary="Last updated August 29, 2026. This policy explains what information Buff uses, where it is stored, when it is shared, and the controls available to you."
+  contactIntro="For privacy questions, data requests, or account-deletion help, email "
   sections={sections}
 />

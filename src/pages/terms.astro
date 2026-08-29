@@ -4,7 +4,7 @@ import LegalLayout from "../layouts/LegalLayout.astro";
 const sections = [
   {
     title: "1. Agreement",
-    body: "These Terms of Service govern your use of Buff, a free Android nutrition tracking app provided by SpacemanCodes LTD. By using Buff, you agree to these terms.",
+    body: "These Terms of Service govern your use of the Buff nutrition tracking app and related services on iOS and Android, provided by SpacemanCodes LTD. By creating an account, using Buff, or purchasing Buff+, you agree to these terms and the applicable Apple App Store or Google Play terms.",
   },
   {
     title: "2. App purpose",
@@ -15,31 +15,39 @@ const sections = [
     body: "Buff does not provide medical, nutritionist, dietitian, fitness, or clinical advice. You are responsible for deciding whether the information in the app is suitable for you. Speak with a qualified professional before making health decisions that require professional guidance.",
   },
   {
-    title: "4. Your responsibility",
-    body: "You are responsible for the information you enter, the goals you set, and how you use the app. You must use Buff lawfully and must not misuse, interfere with, or attempt to disrupt the app or related services.",
+    title: "4. Accounts and your responsibility",
+    body: "You are responsible for keeping your account and device secure, providing accurate account information, reviewing the information you enter or receive, and using Buff lawfully. You must not misuse, reverse engineer, interfere with, or attempt to disrupt Buff or its related services.",
   },
   {
-    title: "5. Free app and changes",
-    body: "Buff is currently provided free of charge. We may update, change, suspend, or discontinue parts of the app at any time, including features, content, design, or availability.",
+    title: "5. Free features and Buff+",
+    body: "Manual and barcode food logging, calories and macros, recipes, goals, progress, health sync, and access to your existing data remain available without Buff+. Buff+ unlocks AI meal analysis and follow-up, subject to the current daily usage limit shown in the app. We may update, change, suspend, or discontinue features while honoring active subscriptions and applicable law.",
   },
   {
-    title: "6. Local data",
-    body: "Buff is designed to store your personal tracking data locally on your phone. You are responsible for managing your device, backups, storage, and any data you delete from the app or device.",
+    title: "6. Subscription billing and renewal",
+    body: "Buff+ is offered as monthly and annual auto-renewing subscriptions. The monthly plan has no trial. Eligible customers may receive a seven-day introductory trial on the annual plan. The localized duration, price, taxes, and eligibility shown by Apple App Store or Google Play at purchase control your transaction. Payment is charged to your store account, and the subscription renews automatically unless you cancel it through that store before renewal. Deleting Buff or your Buff account does not cancel the subscription. Refunds and billing disputes are handled under the store's policies.",
   },
   {
-    title: "7. Third-party services",
-    body: "Buff may rely on third-party platforms or data sources, including Google Play, Android, and food lookup sources. We are not responsible for third-party services, data availability, or external terms that may apply to them.",
+    title: "7. AI estimates",
+    body: "AI meal analysis provides estimates, not guaranteed facts or professional advice. You must review an estimate before relying on or saving it. Buff may limit AI usage to protect service availability and cost, and may temporarily suspend AI processing during outages, abuse, or safety concerns.",
   },
   {
-    title: "8. Disclaimer",
+    title: "8. Data, sync, and connected services",
+    body: "Buff stores data on your device and, when you use a Buff account, may sync authorized records and photos to Buff's servers. Apple Health, Health Connect, connected assistants, RevenueCat, Apple, Google, AI providers, and food-data providers have their own terms and availability. Your use of those services is also subject to their terms. See the Buff Privacy Policy for details.",
+  },
+  {
+    title: "9. Account deletion",
+    body: "You may export or delete your Buff account in Settings. Account deletion permanently removes the account and synced Buff data, subject to necessary security, legal, and store records. It does not cancel an App Store or Google Play subscription; use Manage Subscription first if you want to cancel recurring billing.",
+  },
+  {
+    title: "10. Disclaimer",
     body: "Buff is provided on an as-is and as-available basis to the fullest extent permitted by law. We do not guarantee that the app will be uninterrupted, error-free, or that nutrition data will always be complete or accurate.",
   },
   {
-    title: "9. Limitation of liability",
+    title: "11. Limitation of liability",
     body: "To the fullest extent permitted by law, SpacemanCodes LTD will not be liable for indirect, incidental, special, consequential, or punitive losses arising from your use of Buff.",
   },
   {
-    title: "10. Changes to these terms",
+    title: "12. Changes to these terms",
     body: "We may update these terms from time to time. The updated version will be identified by a new last updated date.",
   },
 ];
@@ -47,9 +55,9 @@ const sections = [
 
 <LegalLayout
   title="Terms of Service - Buff"
-  description="Terms of Service for Buff, a free Android nutrition tracking app."
+  description="Terms of Service for Buff on iOS and Android, including Buff+ subscriptions and AI meal analysis."
   heading="Terms of Service"
-  summary="Last updated May 26, 2026. These terms set out the conditions that apply when you use Buff."
-  contactIntro="For questions about these terms, contact the developer through the Buff "
+  summary="Last updated August 29, 2026. These terms set out the conditions that apply when you use Buff and Buff+."
+  contactIntro="For questions about these terms or Buff+ billing, email "
   sections={sections}
 />
