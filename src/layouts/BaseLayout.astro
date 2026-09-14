@@ -6,39 +6,52 @@ type Props = {
     description: string;
     bodyClass?: string;
     robots?: string;
+    themeColor?: string;
 };
 
 const {
     title,
     description,
-    bodyClass = "bg-secondary text-stone-950 antialiased dark:text-stone-100",
+    bodyClass = "text-night antialiased",
     robots,
+    themeColor = "#b6ff51",
 } = Astro.props;
+
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.url.href;
+const ogImage = new URL("/og.png", Astro.url.origin).href;
 ---
 
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
     <link rel="icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" href="/icon.png"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="sitemap" href="/sitemap-index.xml"/>
+    <link rel="canonical" href={canonical}/>
     <meta name="viewport" content="width=device-width"/>
+    <meta name="color-scheme" content="light"/>
+    <meta name="theme-color" content={themeColor}/>
     {robots &&
             <meta name="robots" content={robots}/>}
     <meta name="description" content={description}/>
+    <meta property="og:title" content={title}/>
+    <meta property="og:description" content={description}/>
+    <meta property="og:image" content={ogImage}/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content={canonical}/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content={title}/>
+    <meta name="twitter:description" content={description}/>
+    <meta name="twitter:image" content={ogImage}/>
     <title>{title}</title>
-    <script is:inline>
-        const applyTheme = () => {
-            document.documentElement.classList.toggle("dark", window.matchMedia("(prefers-color-scheme: dark)").matches);
-        };
-
-        applyTheme();
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
-    </script>
     <script defer src="https://api.pirsch.io/pa.js"
             id="pianjs"
             data-code="bBpEAMZ9cGeCEytTH62FNyd8tk2JzPcW"></script>
     <slot name="head"/>
 </head>
 <body class={bodyClass}>
+<a class="skip" href="#main">Skip to content</a>
 <slot/>
 </body>
 </html>

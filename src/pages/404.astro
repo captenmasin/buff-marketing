@@ -1,33 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Wordmark from "../components/Wordmark.astro";
 ---
 
 <BaseLayout
-  title="Page not found - Buff"
+  title="Page not found. Buff"
   description="The page you were looking for could not be found on the Buff website."
   robots="noindex"
+  themeColor="#f5f6f6"
 >
-    <main class="flex min-h-screen flex-col">
-      <header class="px-5 py-5 sm:px-8">
-        <div class="mx-auto max-w-4xl">
-          <a href="/" class="flex items-center gap-3" aria-label="Buff home">
-            <img src="/icon-dark.png" alt="" class="h-10 w-10 rounded-[13px]" />
-            <span class="text-lg font-black text-primary">Buff</span>
-          </a>
-        </div>
-      </header>
-
-      <section class="flex flex-1 flex-col items-center justify-center px-5 pb-28 text-center sm:px-8">
-        <h1 class="text-5xl leading-none text-primary sm:text-6xl">404</h1>
-        <p class="mt-5 max-w-lg text-lg leading-8 text-stone-700 dark:text-stone-300">
-          Page not found.
-        </p>
-        <a
-          href="/"
-          class="mt-8 inline-flex text-sm font-black text-primary underline decoration-primary/30 underline-offset-4 transition hover:decoration-primary"
-        >
-          Back to home
-        </a>
-      </section>
-    </main>
+  <main
+    id="main"
+    class="wrap"
+    style="display: flex; min-height: 100svh; flex-direction: column; align-items: center; justify-content: center; text-align: center;"
+  >
+    <a href="/" aria-label="Buff home">
+      <Wordmark />
+    </a>
+    <h1 style="margin-top: 2.5rem; font-size: clamp(1.85rem, 3.4vw, 2.65rem);">This page is not here.</h1>
+    <a href="/" class="btn" style="margin-top: 1.15rem;">Back to Buff</a>
+  </main>
 </BaseLayout>

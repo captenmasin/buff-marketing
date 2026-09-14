@@ -1,194 +1,358 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
-  --primary: #253d2c;
-  --primary-light: #dce8d4;
-  --secondary: #F7F4EF;
-  color-scheme: light dark;
-}
-
-:root.dark {
-  --primary: #dce8d4;
-  --primary-light: #122017;
-  --secondary: #0d120f;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #dce8d4;
-    --primary-light: #122017;
-    --secondary: #0d120f;
-  }
+    --acid: #b6ff51;
+    --night: #0f1125;
+    --violet: #7361ff;
+    --paper: #f5f6f6;
+    --ink-soft: rgb(15 17 37 / 0.6);
+    --line: rgb(15 17 37 / 0.1);
+    --white: #ffffff;
+    --gutter: 1.25rem;
+    color-scheme: light;
 }
 
 @theme inline {
-    --color-primary: var(--primary);
-    --color-primary-light: var(--primary-light);
-    --color-secondary: var(--secondary);
-
-    --font-heading: "Alexandria", ui-sans-serif, system-ui, sans-serif;
+    --color-acid: var(--acid);
+    --color-night: var(--night);
+    --color-violet: var(--violet);
+    --color-paper: var(--paper);
+    --color-ink-soft: var(--ink-soft);
+    --color-white: var(--white);
+    --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Fraunces", ui-serif, Georgia, serif;
 }
 
 @font-face {
-  font-family: "Alexandria";
-  src: url("/fonts/alexandria-black.ttf") format("truetype");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 900;
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/ibm-plex-sans-400.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 400;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Alexandria", ui-sans-serif, system-ui, sans-serif;
-  font-weight: 900;
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/ibm-plex-sans-500.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/ibm-plex-sans-600.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/ibm-plex-sans-700.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Fraunces";
+    src: url("/fonts/fraunces-900-italic.woff2") format("woff2");
+    font-display: swap;
+    font-style: italic;
+    font-weight: 900;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  overflow-x: hidden;
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    overflow-x: hidden;
+    background: var(--paper);
+    color: var(--night);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.95rem;
 }
 
-.animate-rise {
-  animation: rise-in 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+h1,
+h2 {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
 }
 
-.hero-phone {
-  animation: phone-in 920ms 140ms cubic-bezier(0.16, 1, 0.3, 1) both;
+.skip {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 40;
+    background: var(--night);
+    color: var(--acid);
+    padding: 0.5rem 0.75rem;
 }
 
-.reveal {
-  animation: reveal linear both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 28%;
+.skip:focus {
+    top: 1rem;
 }
 
-.inside-shot {
-  opacity: 0;
-  transform: translateY(10px) scale(0.98);
-  transition:
-    opacity 220ms ease,
-    transform 220ms ease;
+.logo {
+    display: block;
+    height: 1.45rem;
+    width: auto;
 }
 
-.inside-shot-default {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+.mark {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.6rem 0.35rem;
+    border-radius: 6px;
+    background: var(--night);
 }
 
-.inside-mobile-scroll {
-  scroll-padding-inline: 1.25rem;
-  scrollbar-width: none;
+.mark .logo {
+    height: 1.25rem;
 }
 
-.inside-mobile-scroll::-webkit-scrollbar {
-  display: none;
+.wrap {
+    width: min(68rem, calc(100% - 2 * var(--gutter)));
+    margin-inline: auto;
 }
 
-.inside-mobile-panel {
-  transform: translateZ(0);
+.site-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
 }
 
-.inside-mobile-phone {
-  transition: transform 220ms ease;
+.site-head .mark {
+    padding: 0.45rem 0.7rem 0.4rem;
 }
 
-.inside-mobile-panel:focus-within .inside-mobile-phone,
-.inside-mobile-panel:hover .inside-mobile-phone {
-  transform: translateY(-4px);
+.site-head .mark .logo {
+    height: 1.55rem;
 }
 
-.inside-trigger:focus,
-.inside-trigger:hover,
-.inside-trigger.active,
-.inside-trigger:focus-visible {
-  background: color-mix(in srgb, var(--primary-light) 100%, transparent);
+.stores {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    flex-shrink: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  .inside-trigger:focus,
-  .inside-trigger:hover,
-  .inside-trigger.active,
-  .inside-trigger:focus-visible {
-    background: color-mix(in srgb, var(--primary) 10%, transparent);
-  }
+.store {
+    display: block;
+    height: 2.5rem;
+    width: auto;
 }
 
-.inside-showcase:has([data-shot="meals"]:is(:focus, :focus-visible, :hover, .active)) .inside-shot,
-.inside-showcase:has([data-shot="targets"]:is(:focus, :focus-visible, :hover, .active)) .inside-shot,
-.inside-showcase:has([data-shot="macros"]:is(:focus, :focus-visible, :hover, .active)) .inside-shot,
-.inside-showcase:has([data-shot="progress"]:is(:focus, :focus-visible, :hover, .active)) .inside-shot,
-.inside-showcase[data-active-shot] .inside-shot {
-  opacity: 0;
-  transform: translateY(10px) scale(0.98);
+@media (max-width: 400px) {
+    .site-head {
+        flex-wrap: wrap;
+    }
+
+    .site-head .stores {
+        flex-basis: 100%;
+    }
 }
 
-.inside-showcase:has([data-shot="meals"]:is(:focus, :focus-visible, :hover, .active)) .inside-shot-meals,
-.inside-showcase:has([data-shot="targets"]:is(:focus, :focus-visible, :hover, .active)) .inside-shot-targets,
-.inside-showcase:has([data-shot="macros"]:is(:focus, :focus-visible, :hover, .active)) .inside-shot-macros,
-.inside-showcase:has([data-shot="progress"]:is(:focus, :focus-visible, :hover, .active)) .inside-shot-progress,
-.inside-showcase[data-active-shot="meals"] .inside-shot-meals,
-.inside-showcase[data-active-shot="targets"] .inside-shot-targets,
-.inside-showcase[data-active-shot="macros"] .inside-shot-macros,
-.inside-showcase[data-active-shot="progress"] .inside-shot-progress {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.4rem;
+    padding: 0.4rem 0.95rem;
+    border-radius: 999px;
+    background: var(--acid);
+    color: var(--night);
+    font-size: 0.88rem;
+    font-weight: 700;
 }
 
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.btn:hover {
+    filter: brightness(0.97);
 }
 
-@keyframes phone-in {
-  from {
-    opacity: 0;
-    transform: translateY(28px) scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+.btn-night {
+    background: var(--night);
+    color: var(--acid);
 }
 
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
+.intro {
+    padding: 1.75rem 0 2.25rem;
+    border-top: 1px solid var(--line);
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.intro h1 {
+    font-size: clamp(1.85rem, 3.4vw, 2.65rem);
+    text-wrap: pretty;
+}
+
+.intro p {
+    max-width: 34rem;
+    margin-top: 0.85rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+}
+
+.film {
+    padding: 0 0 2.5rem;
+}
+
+.film-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.15rem;
+    padding: 0.15rem 0 0.35rem;
+}
+
+@media (max-width: 720px) {
+    .film-row {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin-inline: calc(var(--gutter) * -1);
+        padding: 0.15rem 0 0.85rem var(--gutter);
+        scroll-padding-inline: var(--gutter);
+        gap: 0.95rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .film-row::after {
+        content: "";
+        flex: 0 0 var(--gutter);
+    }
+
+    .shot {
+        flex: 0 0 11rem;
+        scroll-snap-align: start;
+    }
+}
+
+.shot {
+    position: relative;
+    margin: 0;
+    padding: 0.42rem 0.42rem 0.72rem;
+    border-radius: 1.55rem;
+    background: var(--night);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.16),
+    0 18px 36px rgb(15 17 37 / 0.16);
+}
+
+.shot::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0.28rem;
+    width: 2.1rem;
+    height: 0.22rem;
+    border-radius: 999px;
+    background: var(--acid);
+    transform: translateX(-50%);
+}
+
+.shot img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 780 / 1688;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 1.15rem;
+    background: var(--paper);
+}
+
+.shot.end img {
+    object-position: center bottom;
+}
+
+
+.close {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem 1.5rem;
+    padding: 1.15rem 0 2rem;
+}
+
+.site-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    padding: 1rem 0 1.75rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+}
+
+.site-foot .logo {
+    height: 1.15rem;
+}
+
+.site-foot nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.site-foot a:hover {
+    color: var(--night);
+}
+
+.legal-body {
+    background: var(--paper);
+}
+
+.legal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 4vw;
+    background: var(--acid);
+}
+
+.legal-head .logo {
+    height: 1.85rem;
+}
+
+.legal-nav {
+    display: flex;
+    gap: 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.legal-nav a[aria-current="page"] {
+    box-shadow: inset 0 -2px 0 var(--night);
+}
+
+.legal-article {
+    width: min(40rem, calc(100% - 2.5rem));
+    margin-inline: auto;
+    padding: 2.5rem 0 4.5rem;
+}
+
+.legal-article h1 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+}
+
+.legal-section {
+    padding: 1.05rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.legal-section h2 {
+    font-size: 1.15rem;
+    line-height: 1.2;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .animate-rise,
-  .hero-phone,
-  .inside-shot,
-  .reveal {
-    animation: none;
-    transition: none;
-  }
+    html {
+        scroll-behavior: auto;
+    }
 }

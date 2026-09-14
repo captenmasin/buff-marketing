@@ -1,0 +1,17 @@
+---
+import Wordmark from "./Wordmark.astro";
+import StoreBadges from "./StoreBadges.astro";
+
+type Props = {
+  showStores?: boolean;
+};
+
+const { showStores = false } = Astro.props;
+---
+
+<header class="site-head">
+  <a href="/" aria-label="Buff home">
+    <Wordmark tone="acid" />
+  </a>
+  {showStores && <StoreBadges />}
+</header>

@@ -1,0 +1,16 @@
+---
+type Props = {
+  tone?: "field" | "night" | "acid";
+};
+
+const { tone = "field" } = Astro.props;
+const src = tone === "field" ? "/logo.svg" : "/logo-dark.svg";
+---
+
+{tone === "acid" ? (
+  <span class="mark">
+    <img src={src} alt="Buff" class="logo" width="1024" height="468" />
+  </span>
+) : (
+  <img src={src} alt="Buff" class="logo" width="1024" height="468" />
+)}
