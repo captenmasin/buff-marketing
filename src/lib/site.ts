@@ -1,7 +1,7 @@
 export const origin = "https://usebuff.app";
 
 export const play = "https://play.google.com/store/apps/details?id=com.spacemancodes.buff";
-export const appStore = "#";
+export const appStore = "https://apps.apple.com/us/app/buff-health-progress/id6805952212";
 
 export const heading = "The simple calorie and workout log.";
 
